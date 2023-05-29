@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>                        
+<head>
+	<meta charset="utf-8">
+	<title>FORMS</title>
+
+	<link rel="stylesheet" href="19030411024.css">
+	
+</head>
+
+<body>
+
+	<form action="" method="post" id="contact-form">
+		<fieldset>
+			<legend>Contact Form</legend>
+			<table>
+				<tr>
+					<td>Name</td>
+					<td>
+						<input type="text" name="name" id="name" placeholder="Enter your name" required>
+					</td>
+				</tr>
+				<tr>
+					<td>Surname</td>
+					<td>
+						<input type="text" name="surname" id="surname" placeholder="Enter your surname" required>
+					</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>
+						<input type="email" id="email" name="email" placeholder="Enter your email" required>
+					</td>
+				</tr>
+				<tr>
+					<td>Message</td>
+					<td>
+						<textarea id="message" name="message" placeholder="Enter your message" rows="5" required></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" id="submit" name="submit" value="Send">
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	
+	<script>
+	  document.getElementById("contact-form").addEventListener("submit", function(event) {
+		event.preventDefault(); // Formun otomatik olarak gönderilmesini engeller
+
+		var nameInput = document.getElementById("name");
+		var surnameInput = document.getElementById("surname");
+		var emailInput = document.getElementById("email");
+		var messageInput = document.getElementById("message");
+
+		var name = nameInput.value.trim();
+		var surname = surnameInput.value.trim();
+		var email = emailInput.value.trim();
+		var message = messageInput.value.trim();
+
+		// Form verilerini göndermek için burada gerekli işlemleri yapabilirsiniz
+
+		alert("Form submitted successfully!");
+		document.getElementById("contact-form").reset();
+		return false; // Formun gönderilmesini engeller
+	  });
+	</script>
+
+</body>
+</html>
+
